@@ -4,71 +4,110 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div> -->
 
-  <div>
-
-    <div class="">
-      <img alt="Vue logo" src="../assets/jpmobilelogo.jpg" style="width:80px">
-      <div class="form-group">
-        <input class="form-input" type="text" id="input-example-1" placeholder="Name">
+  <!-- <div>
+      <div style="width:60%;margin:0 auto;">
+        <span class="elipse red"></span><span>Full Time</span>
+        <span class="elipse blue"></span><span>Part Time</span>
+        <span class="elipse black"></span><span>Temporary</span>
+        <span class="elipse lightblue"></span><span>Contract</span>
       </div>
+    </div> -->
+
+  <div>
+   
+    <div class="">
+        <img alt="Vue logo" src="../assets/jpmobilelogo.jpg" style="width:80px">
+        <div class="form-group">
+          <input class="form-input" type="text" id="input-example-1" placeholder="Name">
+        </div>
     </div>
 
-    <div class="">
-      <div class="job" @click="alert('Take User To Job')">
-        <div class="tag red">Full Time</div>
-        <h4 id="job-title">Retail Sales Part Time</h4>
-        <h5>FDJ.com - Columbia, SC</h5>
-        <p>As an Apparel and Accessories team member, your eye for trend will help our guests discover new looks and bring their definition of style to life with confidence. We're looking for team members</p>
+
+    <div class="container">
+      <div class="columns">
+
+        <div class="column col-xl-4 hide-sm hide-md hide-lg hide-xl">
+          <div class="sidebar">
+            <h1>Hello!!!!!!</h1>
+          </div>
+        </div>
+
+        <div class="column col-sm-12">
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="tag red">Full Time</div>
+            <h4 id="job-title">Retail Sales Part Time</h4>
+            <h5>FDJ.com - Columbia, SC</h5>
+            <p>As an Apparel and Accessories team member, your eye for trend will help our guests discover new looks and bring...</p>
+          </div>
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="tag red">Full Time</div>
+            <h4 id="job-title">Part Time Event Specialist</h4>
+            <h5>AdvantageSolutions - Columbia, SC</h5>
+            <p>Are you outgoing, friendly and enjoy meeting new people? Join our winning team as a retail demonstrator</p>
+          </div>  
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="tag blue">Part Time</div>
+            <h4 id="job-title">Work At Home (Up To $37, Hourly, Part Time, Full Time)</h4>
+            <h5>Classified - Elgin, SC</h5>
+            <p>Work at home or anywhere you can connect to the internet. Set your own hours. Unlimited earning pote</p>
+          </div>  
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="tag lightblue">Contract</div>
+            <h4>PART TIME ADMINISTRATIVE ASSISTANT</h4>
+            <h5>Express Employment Professionals - Columbia, SC</h5>
+            <p>Express Employment Professionals is currently looking for Part-Time Administrative Assistants.</p>
+          </div>  
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="tag black">Full Time</div>
+            <h4>$22Hr Part Time (Walmart)</h4>
+            <h5>Walmart - Columbia, SC</h5>
+            <p>Part Time Workers are needed at Walmart. No experience needed and competive pay and benefits. Apply to local Part Time Walmart Jobs by clicking here.</p>
+          </div>
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="tag blue">Full Time</div>
+            <h4>Part-Time Pediatrician</h4>
+            <h5>Eau Claire Cooperative Health Center Inc - Columbia, SC</h5>
+            <p>Title:Part-Time\/Flexible Pediatrician Company Overview: Eau Claire Cooperative Health Centers, Inc. (ECCHC) has been serving the midlands area since 1981. We are South Carolina s largest and most cost</p>
+          </div>
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="tag red">Full Time</div>
+            <h4>Retail Sales Part Time</h4>
+            <h5>FDJ.com - Columbia, SC</h5>
+            <p>As an Apparel and Accessories team member, your eye for trend will help our guests discover new looks and bring their definition of style to life with confidence. We're looking for team members</p>
+          </div>      
+        </div>
+
+        <div class="column col-xl-4 hide-xs hide-md hide-lg hide-xl">
+          <div class="">
+            <h1>Hello!!!!!!</h1>
+          </div>
+        </div>
+
       </div>
-      <div class="job" @click="alert('Take User To Job')">
-        <div class="tag red">Full Time</div>
-        <h4 id="job-title">Part Time Event Specialist</h4>
-        <h5>AdvantageSolutions - Columbia, SC</h5>
-        <p>Are you outgoing, friendly and enjoy meeting new people? Join our winning team as a retail demonstrator</p>
-      </div>  
-      <div class="job" @click="alert('Take User To Job')">
-        <div class="tag blue">Part Time</div>
-        <h4 id="job-title">Work At Home (Up To $37, Hourly, Part Time, Full Time)</h4>
-        <h5>Classified - Elgin, SC</h5>
-        <p>Work at home or anywhere you can connect to the internet. Set your own hours. Unlimited earning pote</p>
-      </div>  
-      <div class="job" @click="alert('Take User To Job')">
-        <div class="tag lightblue">Contract</div>
-        <h4>PART TIME ADMINISTRATIVE ASSISTANT</h4>
-        <h5>Express Employment Professionals - Columbia, SC</h5>
-        <p>Express Employment Professionals is currently looking for Part-Time Administrative Assistants.</p>
-      </div>  
-      <div class="job" @click="alert('Take User To Job')">
-        <div class="tag black">Full Time</div>
-        <h4>$22Hr Part Time (Walmart)</h4>
-        <h5>Walmart - Columbia, SC</h5>
-        <p>Part Time Workers are needed at Walmart. No experience needed and competive pay and benefits. Apply to local Part Time Walmart Jobs by clicking here.</p>
-      </div>
-      <div class="job" @click="alert('Take User To Job')">
-        <div class="tag blue">Full Time</div>
-        <h4>Part-Time Pediatrician</h4>
-        <h5>Eau Claire Cooperative Health Center Inc - Columbia, SC</h5>
-        <p>Title:Part-Time\/Flexible Pediatrician Company Overview: Eau Claire Cooperative Health Centers, Inc. (ECCHC) has been serving the midlands area since 1981. We are South Carolina s largest and most cost</p>
-      </div>
-      <div class="job" @click="alert('Take User To Job')">
-        <div class="tag red">Full Time</div>
-        <h4>Retail Sales Part Time</h4>
-        <h5>FDJ.com - Columbia, SC</h5>
-        <p>As an Apparel and Accessories team member, your eye for trend will help our guests discover new looks and bring their definition of style to life with confidence. We're looking for team members</p>
-      </div>      
     </div>
   </div>
-
-
 </template>
 
 
 <style lang="scss">
+
   $red:#E03956;
   $blue:#206084;
   $lightblue:#53AAF3;
   $black:#686868;
 
+  .red{
+     background:$red;
+  }
+   .blue{
+     background:$blue;
+  }
+   .lightblue{
+     background:$lightblue; 
+  }
+   .black{
+     background:$black;
+  }
 
   .job{
     width:95%;
@@ -76,7 +115,8 @@
     position:relative;
     background:#F8F8F8;
     padding:0.8em 1em 0em 1em;
-    border:1px solid whitesmoke;
+    border:1px solid grey;
+    border-radius:2px;
     #job-title{
       white-space: nowrap;
       overflow: hidden;
@@ -84,26 +124,14 @@
     }
     .tag{
       width:100px;
-      padding:5px;
-      border-radius: 3px;
+      padding:6px;
+      border-radius: 2px;
       color:white;
       text-align: center;
       font-weight: 600;
       position: absolute;
       right:10px;
-      top:6px;
-    }
-    .red{
-      background:$red;
-    }
-    .blue{
-      background:$blue;
-    }
-    .lightblue{
-      background:$lightblue; 
-    }
-    .black{
-      background:$black;
+      top:7px;
     }
     h4{
       font-size:1.2em;
@@ -116,6 +144,20 @@
       font-size:0.9em;
       margin:0.5 0em;
     }
+    span{
+      position:absolute;
+    }
+  }
+  .elipse{
+      width:15px;
+      height:15px;
+      border-radius:50px;
+      display: inline-block;
+      margin:0px 5px;
+  }
+  .sidebar{
+    background:black;
+    height: 900px;
   }
 </style>
 

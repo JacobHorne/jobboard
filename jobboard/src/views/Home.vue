@@ -17,9 +17,9 @@
    
     <div class="">
         <img alt="Vue logo" src="../assets/jpmobilelogo.jpg" style="width:80px">
-        <div class="form-group">
+        <!-- <div class="form-group">
           <input class="form-input" type="text" id="input-example-1" placeholder="Name">
-        </div>
+        </div> -->
     </div>
 
 
@@ -28,17 +28,108 @@
 
         <div class="column col-xl-4 hide-sm hide-md hide-lg hide-xl">
           <div class="sidebar">
-            <h1>Hello!!!!!!</h1>
+            <div>
+              <h4>Location</h4>
+              <p>Columbia, SC</p>
+              <p>Charleston, SC</p>
+              <p>Greenville, SC</p>
+              <p>Myrtle Beach, SC</p>
+            </div>
+
+            <div>
+              <h4>Job Type</h4>
+              <p>Full Time</p>
+              <p>Part Time</p>
+              <p>Temporary</p>
+              <p>Contact</p>
+            </div>
+
+            <div>
+              <h4>Categories</h4>
+              <p>Warehouse (212)</p>
+              <p>Nursing (122)</p>
+              <p>Trucking (92)</p>
+              <p>Construction (55)</p>
+              <p>Forklift (55)</p>
+            </div>
+
+             <div>
+              <h4>Education</h4>
+              <p>GED</p>
+              <p>High School</p>
+              <p>College/University</p>
+            </div>
+            
           </div>
         </div>
 
         <div class="column col-sm-12">
+
+          <a class="job" @click="alert('Take User To Job')">
+            <div class="columns">
+              <div class="column col-9">
+                <h4 id="job-title">Retail Sales Part Time</h4>
+              </div>
+              <div class="columb col-3">
+                <div class="tag red">Full Time</div>
+              </div>
+            </div>
+            <h5>FDJ.com - Columbia, SC</h5>
+            <p>As an Apparel and Accessories team member, your eye for trend will help our guests discover new looks and bring...</p>
+          </a>
+
           <div class="job" @click="alert('Take User To Job')">
-            <div class="tag red">Full Time</div>
-            <h4 id="job-title">Retail Sales Part Time</h4>
+            <div class="columns">
+              <div class="column col-9">
+                <h4 id="job-title">Retail Sales Part Time</h4>
+              </div>
+              <div class="columb col-3">
+                <div class="tag red">Full Time</div>
+              </div>
+            </div>
             <h5>FDJ.com - Columbia, SC</h5>
             <p>As an Apparel and Accessories team member, your eye for trend will help our guests discover new looks and bring...</p>
           </div>
+
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="columns">
+              <div class="column col-9">
+                <h4 id="job-title">Retail Sales Part Time</h4>
+              </div>
+              <div class="columb col-3">
+                <div class="tag red">Full Time</div>
+              </div>
+            </div>
+            <h5>FDJ.com - Columbia, SC</h5>
+            <p>As an Apparel and Accessories team member, your eye for trend will help our guests discover new looks and bring...</p>
+          </div>
+
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="columns">
+              <div class="column col-9">
+                <h4 id="job-title">Retail Sales Part Time</h4>
+              </div>
+              <div class="columb col-3">
+                <div class="tag red">Full Time</div>
+              </div>
+            </div>
+            <h5>FDJ.com - Columbia, SC</h5>
+            <p>As an Apparel and Accessories team member, your eye for trend will help our guests discover new looks and bring...</p>
+          </div>
+
+          <div class="job" @click="alert('Take User To Job')">
+            <div class="columns">
+              <div class="column col-9">
+                <h4 id="job-title">Part Time Event Specialist</h4>
+              </div>
+              <div class="columb col-3">
+                <div class="tag red">Full Time</div>
+              </div>
+            </div>
+            <h5>AdvantageSolutions - Columbia, SC</h5>
+            <p>Are you outgoing, friendly and enjoy meeting new people? Join our winning team as a retail demonstrator</p>
+          </div>
+
           <div class="job" @click="alert('Take User To Job')">
             <div class="tag red">Full Time</div>
             <h4 id="job-title">Part Time Event Specialist</h4>
@@ -79,7 +170,15 @@
 
         <div class="column col-xl-4 hide-xs hide-md hide-lg hide-xl">
           <div class="">
-            <h1>Hello!!!!!!</h1>
+            <div class="ad">
+              <p>Ad 1</p>
+            </div>
+            <div class="ad">
+              <p>Ad 2</p>
+            </div>
+             <div class="ad">
+              <p>Ad 2</p>
+            </div>
           </div>
         </div>
 
@@ -95,7 +194,6 @@
   $blue:#206084;
   $lightblue:#53AAF3;
   $black:#686868;
-
   .red{
      background:$red;
   }
@@ -108,30 +206,32 @@
    .black{
      background:$black;
   }
-
   .job{
-    width:95%;
-    margin:10px auto;
-    position:relative;
+    width:98%;
+    margin:0px auto 10px auto;
     background:#F8F8F8;
     padding:0.8em 1em 0em 1em;
     border:1px solid grey;
     border-radius:2px;
+    display:block;
+    list-style: none;
+    cursor: pointer;
     #job-title{
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     .tag{
-      width:100px;
+      width:110px;
       padding:6px;
       border-radius: 2px;
       color:white;
       text-align: center;
       font-weight: 600;
-      position: absolute;
-      right:10px;
-      top:7px;
+      float:right;
+      // position: absolute;
+      // right:10px;
+      // top:7px;
     }
     h4{
       font-size:1.2em;
@@ -139,10 +239,14 @@
     }
     h5{
       font-size:1em;
+      color:black;
+      opacity:0.7;
     }
     p{
       font-size:0.9em;
       margin:0.5 0em;
+      color:black;
+      opacity:0.6;
     }
     span{
       position:absolute;
@@ -156,8 +260,31 @@
       margin:0px 5px;
   }
   .sidebar{
-    background:black;
+    background:whitesmoke;
+    border:grey;
     height: 900px;
+    padding:1em 3em;
+    div{
+      padding:0 0 2em 0;
+      margin-bottom:2em;
+      border-bottom:1px solid lightgrey;
+    }
+    h4{
+      margin:0;
+      font-size:1.2em;
+    }
+    p{
+      margin:0;
+    }
+    // :last-child{
+      
+    // }
+  }
+  .ad{
+    background:whitesmoke;
+    border:1px solid lightgrey;
+    padding:3.5em;
+    margin:0em 0 2em 0; 
   }
 </style>
 

@@ -38,10 +38,10 @@
 
             <div>
               <h4>Job Type</h4>
-              <p>Full Time</p>
-              <p>Part Time</p>
-              <p>Temporary</p>
-              <p>Contact</p>
+              <span class="elipse red"></span><p>Full Time</p>
+              <span class="elipse blue"></span><p>Part Time</p>
+              <span class="elipse lightblue"></span><p>Temporary</p>
+              <span class="elipse black"></span><p>Contact</p>
             </div>
 
             <div>
@@ -84,7 +84,7 @@
                 <h4 id="job-title">Retail Sales Part Time</h4>
               </div>
               <div class="columb col-3">
-                <div class="tag red">Full Time</div>
+                <div class="tag blue">Full Time</div>
               </div>
             </div>
             <h5>FDJ.com - Columbia, SC</h5>
@@ -97,7 +97,7 @@
                 <h4 id="job-title">Retail Sales Part Time</h4>
               </div>
               <div class="columb col-3">
-                <div class="tag red">Full Time</div>
+                <div class="tag black">Full Time</div>
               </div>
             </div>
             <h5>FDJ.com - Columbia, SC</h5>
@@ -110,7 +110,7 @@
                 <h4 id="job-title">Retail Sales Part Time</h4>
               </div>
               <div class="columb col-3">
-                <div class="tag red">Full Time</div>
+                <div class="tag blue">Full Time</div>
               </div>
             </div>
             <h5>FDJ.com - Columbia, SC</h5>
@@ -168,7 +168,7 @@
           </div>      
         </div>
 
-        <div class="column col-xl-4 hide-xs hide-md hide-lg hide-xl">
+        <div class="column col-xl-4 hide-xs hide-md">
           <div class="">
             <div class="ad">
               <p>Ad 1</p>
@@ -177,7 +177,7 @@
               <p>Ad 2</p>
             </div>
              <div class="ad">
-              <p>Ad 2</p>
+              <p>Ad 3</p>
             </div>
           </div>
         </div>
@@ -194,6 +194,7 @@
   $blue:#206084;
   $lightblue:#53AAF3;
   $black:#686868;
+
   .red{
      background:$red;
   }
@@ -211,7 +212,7 @@
     margin:0px auto 10px auto;
     background:#F8F8F8;
     padding:0.8em 1em 0em 1em;
-    border:1px solid grey;
+    border:1px solid lightgrey;
     border-radius:2px;
     display:block;
     list-style: none;
@@ -253,11 +254,11 @@
     }
   }
   .elipse{
-      width:15px;
-      height:15px;
+      width:12px;
+      height:12px;
       border-radius:50px;
-      display: inline-block;
-      margin:0px 5px;
+      margin:0px 5px 0 0;
+      float:left;
   }
   .sidebar{
     background:whitesmoke;
@@ -265,16 +266,18 @@
     height: 900px;
     padding:1em 3em;
     div{
-      padding:0 0 2em 0;
-      margin-bottom:2em;
+      padding:0 0 1em 0;
+      margin-bottom:1em;
       border-bottom:1px solid lightgrey;
     }
     h4{
-      margin:0;
+      margin:0 0 6px 0;
       font-size:1.2em;
     }
     p{
       margin:0;
+      font-size:0.9em;
+      
     }
     // :last-child{
       
@@ -283,8 +286,8 @@
   .ad{
     background:whitesmoke;
     border:1px solid lightgrey;
-    padding:3.5em;
-    margin:0em 0 2em 0; 
+    padding:3em;
+    margin:0em 0 10px 0; 
   }
 </style>
 

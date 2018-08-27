@@ -7,15 +7,29 @@
    <div class="site-wrapper">  
     <div class="header">
       <div class="columns">
-        <div class="column col-2">
-          <img class="hide-xl show-xs" alt="Vue logo" src="../assets/jpmobilelogo.jpg" style="width:80px">
-          <img class="hide-xs" alt="Vue logo" src="../assets/jplogo.jpg">
+        <div class="column col-2 col-lg-3">
+          <img class="img-fit-contain show-md hide-xl" alt="" src="../assets/jpmobilelogo.jpg" style="max-width:80px;">
+          <img class="img-fit-contain hide-xs hide-sm hide-md " alt="" src="../assets/jplogo.jpg">
         </div>
-        <div class="column col-10">
-          <div class="form-group">
-            <input class="form-input" type="text" id="input-example-1" placeholder="Name">
+        <div class="column col-10 col-lg-9">
+          <div class="input-group header-input ">
+            <input type="text" class="form-input input-lg" placeholder="Search For Jobs">
+            <button class="btn btn-primary input-group-btn btn-lg"><i class="icon icon-location"></i></button>
           </div>
         </div>
+
+        <div class="modal modal-sm">
+          <a href="#close" class="modal-overlay" aria-label="Close"></a>
+          <div class="modal-container">
+            <h1>hehehehehe</h1>
+          </div>
+        </div>
+        <!-- <div class="hide-xl show-md show-lg centered" style="padding:0.5em;">
+          <button class="btn">first button</button>
+          <button class="btn">second button</button>
+          <button class="btn">third button</button>
+          <button class="btn">third button</button>
+        </div>  -->
       </div>
     </div>
 
@@ -24,7 +38,7 @@
         <div class="column col-2 hide-sm hide-md hide-lg hide-xl">
           <div class="sidebar">
             <div class="location">
-              <h4>Location</h4>
+              <i class="icon icon-location"></i><h4>Location</h4>
               <ul id="example-1">
                 <li v-for="city in cities" :key="city">
                   <a href="">{{city}}</a>
@@ -33,15 +47,19 @@
             </div>
 
             <div class="jobType">
-              <h4>Job Type</h4>
-              <span class="elipse red"></span><a href="">Full Time</a>
-              <span class="elipse blue"></span><a href="">Part Time</a>
-              <span class="elipse lightblue"></span><a href="">Temporary</a>
-              <span class="elipse black"></span><a href="">Contact</a>
+              <i class="icon icon-menu"></i><h4>Job Type</h4>
+              <!-- <span class="elipse red"></span> <a href="">Full Time</a>
+              <span class="elipse blue"></span> <a href="">Part Time</a>
+              <span class="elipse lightblue"></span> <a href="">Temporary</a>
+              <span class="elipse black"></span> <a href="">Contact</a> -->
+              <a href="">Full Time</a>
+              <a href="">Part Time</a>
+              <a href="">Temporary</a>
+              <a href="">Contact</a>
             </div>
 
             <div class="categories">
-              <h4>Categories</h4>
+              <i class="icon icon-apps"></i><h4>Categories</h4>
               <a href="" @click="alert();">Warehouse (212)</a>
               <a href="" @click="alert();">Packer (54)</a>
               <a href="" @click="alert();">Medical (100)</a>
@@ -49,7 +67,7 @@
             </div>
 
              <div class="educationLevel">
-              <h4>Education</h4>
+              <i class="icon icon-edit"></i><h4>Education</h4>
               <a href="" @click="alert();">GED</a>
               <a href="" @click="alert();">High School</a>
               <a href="" @click="alert();">Technical School</a>
@@ -123,12 +141,13 @@
     margin-bottom:2em;
     margin:0 auto;
     max-width:1200px;
-    input{
-      padding:1.3em;
+    border-bottom:1px solid whitesmoke;
+    .header-input{
+      margin: 10px 0 0 20px;
     }
   }
   .job-section{
-    margin-top:4em;
+    margin-top:5em;
     .job{
       width:98%;
       margin:0px auto 10px auto;
@@ -139,7 +158,6 @@
       display:block;
       list-style: none;
       cursor: pointer;
-      
       &:hover{
         background-color:rgb(190, 220, 229);
         text-decoration:none;
@@ -195,18 +213,17 @@
       
   }
   .sidebar{
-    border:grey;
-    height: 900px;
+    // height: 900px;
     padding:1em 1em;
     position:fixed;
     margin-top:4em;
     a{
         color:$black !important;
         margin:0;
-        display: block;
-    &a:visited{
-      color:$black;
-    }
+        display:block;
+      &a:visited{
+        color:$black;
+      }
     }
     .location{ 
       ul,li{
@@ -215,22 +232,24 @@
       }
     }
     div{
-      padding:0 0 1em 0;
+      padding:0 0 1.5em 0;
       margin-bottom:1em;
-      border-bottom:1px solid lightgrey;
+      // border-bottom:1px solid lightgrey;
     }
     h4{
       margin:0 0 6px 0;
       font-size:1.3em;
       font-weight: 600;
+      display:inline-block;
     }
     p{
       margin:0;
       font-size:0.9em; 
     }
-    // :last-child{
-      
-    // }
+    i{
+      font-size:1.2em;
+      margin:0 8px 6px 0;
+    }
   }
   .ad-sidebar{
     padding:3em;
@@ -239,11 +258,24 @@
     text-align:center;
   }
   .feature-job{
-    background:rgb(200, 251, 255) !important;
+    background:rgb(255, 255, 158) !important;
   }
   .tag-random{
     background:$blue;
   }
+  @media only screen and (min-width: 600px) {}
+  @media only screen and (min-width: 800px) {
+    .header{
+      .header-input{
+      margin:10px 2px;
+      max-width:490px;
+      border-radius:2px;
+      }
+    }
+  }
+  @media only screen and (min-width: 1000px) {}
+  @media only screen and (min-width: 1200px) {}
+
 </style>
 
 
@@ -261,11 +293,11 @@ export default {
        cities:['Columbia,SC','Greenville,SC','Charleston,SC'],
        jobs: [
         { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
+        { jobTitle: 'Degree Audit Coordinator', jobLocation: 'Columbia, SC', jobCompany: 'University of South Carolina', jobDescription: 'This is a great Jobs Description,  ' },
+        { jobTitle: 'Chair of BA Degree Program', jobLocation: 'Columbia, SC', jobCompany: 'Spartanburg Methodist', jobDescription: 'This is a great Jobs Description,  ' },
+        { jobTitle: 'Route Service Sales Representative', jobLocation: 'Columbia, SC', jobCompany: 'Malone', jobDescription: 'This is a great Jobs Description,  ' },
+        { jobTitle: 'Sitter Wanted', jobLocation: 'Lugoff, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
+        { jobTitle: 'Customer Service Rep(07283)-148 HWY 274, Unit #4', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
         { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
         { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
         { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },

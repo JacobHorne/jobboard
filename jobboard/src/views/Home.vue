@@ -1,6 +1,8 @@
 <template>
   <div>
    <div class="site-wrapper">  
+
+    <!--Header-->
     <div class="header">
       <div class="columns">
         <div class="column col-2 col-sm-3 col-md-4 col-lg-3 col-xl-3">
@@ -20,6 +22,8 @@
 
     <div class="container">
       <div class="columns">
+
+        <!--SideBar-->
         <div class="column col-2 hide-sm hide-md hide-lg hide-xl">
           <div class="sidebar">
             <div class="location">
@@ -58,6 +62,8 @@
           </div>
         </div>
       
+
+         <!--Job Section-->
         <div class="column col-sm-12 job-section">
           <div v-for="(job, index) in jobs"  :key="index">
             <a href="" class="job" :class="{ 'feature-job': index <= 1 }">
@@ -76,6 +82,7 @@
           </div>
         </div>
 
+        <!--Ad Section-->
         <div class="column col-xl-5 hide-xs hide-md">
           <div class="ad-sidebar">
              <img alt="Advertisement logo" src="../assets/sampleAd.jpg">
@@ -262,6 +269,9 @@
     margin-top:6em;
     position:fixed;
     padding:0 1.5em;
+    img{
+      display:block;
+    }
   }
   .feature-job{
     background:#fff7c9 !important;
@@ -292,7 +302,6 @@
   @media only screen and (min-width: 1200px) {}
 
 </style>
-
 
 <script>
 // @ is an alias to /src

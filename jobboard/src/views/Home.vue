@@ -1,35 +1,20 @@
 <template>
-  <!-- <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div> -->
   <div>
    <div class="site-wrapper">  
     <div class="header">
       <div class="columns">
-        <div class="column col-2 col-lg-3">
-          <img class="img-fit-contain show-md hide-xl" alt="" src="../assets/jpmobilelogo.jpg" style="max-width:80px;">
-          <img class="img-fit-contain hide-xs hide-sm hide-md " alt="" src="../assets/jplogo.jpg">
+        <div class="column col-2 col-sm-3 col-md-4 col-lg-3 col-xl-3">
+          <img class="img-fit-contain show-sm hide-md hide-xl" alt="" src="../assets/jpmobilelogo.jpg" style="max-width:80px;">
+          <img class="img-fit-contain hide-xs hide-sm " alt="" src="../assets/jplogo.jpg">
         </div>
-        <div class="column col-10 col-lg-9">
+        <div class="column col-10 col-sm-9 col-md-8 col-lg-8 col-xl-9">
           <div class="input-group header-input ">
-            <input type="text" class="form-input input-lg" placeholder="Search For Jobs">
-            <button class="btn btn-primary input-group-btn btn-lg"><i class="icon icon-location"></i></button>
+            <input type="text" class="form-input input-lg" onblur="this.placeholder = 'Enter Job Title, Keyword, or Company Name'" onfocus="this.placeholder = ''" placeholder="Enter Job Title, Keyword, or Company Name">
+            <button class="btn btn-primary input-group-btn btn-lg input-button">Search Jobs</button>
+             <!-- <span style="position:absolute;font-size:0.7em;opacity:0.9;bottom:-20px">Enter A Job Title, Keyword, or Company Name</span> -->
+            <!-- <button btn btn-primary style="position:absolute;background-color:blue;color:white;font-weight:500;borer:none;border-radius:2px;"><i class="icon icon-location"></i> Location</button> -->
           </div>
         </div>
-
-        <div class="modal modal-sm">
-          <a href="#close" class="modal-overlay" aria-label="Close"></a>
-          <div class="modal-container">
-            <h1>hehehehehe</h1>
-          </div>
-        </div>
-        <!-- <div class="hide-xl show-md show-lg centered" style="padding:0.5em;">
-          <button class="btn">first button</button>
-          <button class="btn">second button</button>
-          <button class="btn">third button</button>
-          <button class="btn">third button</button>
-        </div>  -->
       </div>
     </div>
 
@@ -43,15 +28,12 @@
                 <li v-for="city in cities" :key="city">
                   <a href="">{{city}}</a>
                 </li>
+                <li><a href="">Custom Location</a></li>
               </ul>
             </div>
 
             <div class="jobType">
               <i class="icon icon-menu"></i><h4>Job Type</h4>
-              <!-- <span class="elipse red"></span> <a href="">Full Time</a>
-              <span class="elipse blue"></span> <a href="">Part Time</a>
-              <span class="elipse lightblue"></span> <a href="">Temporary</a>
-              <span class="elipse black"></span> <a href="">Contact</a> -->
               <a href="">Full Time</a>
               <a href="">Part Time</a>
               <a href="">Temporary</a>
@@ -77,29 +59,29 @@
         </div>
       
         <div class="column col-sm-12 job-section">
-          <div v-for="(job, index) in jobs"  :key="job">
+          <div v-for="(job, index) in jobs"  :key="index">
             <a href="" class="job" :class="{ 'feature-job': index <= 1 }">
             <div class="columns">
               <div class="column col-9">
                 <h4 id="job-title">{{job.jobTitle}}</h4>
               </div>
               <div class="columb col-3">
-                <div class="tag red" :class="{ 'tag-random': index % 2 }">Full Time</div>
+                <div class="tag red" :class="{ 'tag-random': index % 3 }">View Job</div>
               </div>
             </div>
-            <h5>{{job.jobCompany}}, {{job.jobLocation}}</h5>
+            <h5 id="job-title">{{job.jobCompany}}</h5>
             <p>{{job.jobDescription}}</p>
-            <span>Posted June 8th</span>
+            <span>Location: {{job.jobLocation}} - Date Posted: June 8th </span>
             </a>
           </div>
         </div>
 
-        <div class="column col-xl-4 hide-xs hide-md">
+        <div class="column col-xl-5 hide-xs hide-md">
           <div class="ad-sidebar">
+             <img alt="Advertisement logo" src="../assets/sampleAd.jpg">
              <img alt="Advertisement logo" src="../assets/sampleAd.jpg">
           </div>
         </div>
-
         </div>
       </div>
     </div>
@@ -108,12 +90,15 @@
 
 
 <style lang="scss">
-
   $red:#E03956;
   $blue:#206084;
   $lightblue:#53AAF3;
-  $black:#686868;
-
+  $black:#323232;
+  .btn{
+    background:$black !important;
+    font-weight:500;
+    border:1px solid $black !important;
+  }
   .red{
      background:$red;
   }
@@ -141,19 +126,33 @@
     margin-bottom:2em;
     margin:0 auto;
     max-width:1200px;
-    border-bottom:1px solid whitesmoke;
+    border-bottom:1px solid rgba(223, 218, 218, 0.8);
     .header-input{
-      margin: 10px 0 0 20px;
+      margin: 10px 0 0 0px;
+      max-width:600px;
+      position:relative;
+    }
+    .input-button:hover{
+      opacity:0.8;
+    }
+    input::placeholder{
+      font-size:0.8em;
+      color:$black;
+      opacity:0.8;
+    }
+    input:focus{
+      border:2px solid $blue;
+      color:$black;
     }
   }
   .job-section{
-    margin-top:5em;
+    margin-top:6em;
     .job{
       width:98%;
-      margin:0px auto 10px auto;
+      margin:0px auto 12px auto;
       background:whitesmoke;
-      border:1px solid rgb(240, 233, 233);
-      padding:0.8em 1em 0.8em 1em;
+      // border:1px solid rgb(193, 186, 186);
+      padding:0.5em 1em 0.5em 1em;
       border-radius:2px;
       display:block;
       list-style: none;
@@ -172,34 +171,39 @@
         text-overflow: ellipsis;
       }
       .tag{
-        width:110px;
+        width:80px;
         padding:6px;
         border-radius: 2px;
         color:white;
         text-align: center;
         font-weight: 600;
         float:right;
+        font-size:0.9em;
       }
       h4{
         font-size:1.2em;
         color:black;
+        text-decoration:underline;
+        font-weight: 600;
       }
       h5{
         font-size:1em;
         color:black;
-        opacity:0.7;
+        opacity:0.8;
+        margin:0;
+        font-weight: 600;
       }
       p{
         font-size:0.9em;
         color:black;
-        opacity:0.6;
+        opacity:0.9;
         margin:0;
       }
       span{
         font-size:0.8em;
         text-align:right;
         color:$black;
-        opacity:0.6;
+        opacity:0.8;
       }
     }
   }
@@ -213,14 +217,15 @@
       
   }
   .sidebar{
-    // height: 900px;
     padding:1em 1em;
     position:fixed;
-    margin-top:4em;
+    margin-top:5em;
     a{
         color:$black !important;
         margin:0;
+        font-size:0.95em;
         display:block;
+        opacity:0.9;
       &a:visited{
         color:$black;
       }
@@ -241,6 +246,8 @@
       font-size:1.3em;
       font-weight: 600;
       display:inline-block;
+      color:$black;
+      opacity:0.9;
     }
     p{
       margin:0;
@@ -252,28 +259,36 @@
     }
   }
   .ad-sidebar{
-    padding:3em;
-    margin:0em 0 10px 0; 
+    margin-top:6em;
     position:fixed;
-    text-align:center;
+    padding:0 1.5em;
   }
   .feature-job{
-    background:rgb(255, 255, 158) !important;
+    background:#fff7c9 !important;
   }
   .tag-random{
     background:$blue;
   }
   @media only screen and (min-width: 600px) {}
   @media only screen and (min-width: 800px) {
+    .job-section{
+      .job{
+        .tag{
+          width:110px;
+          font-size:1.1em;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 1000px) {
     .header{
       .header-input{
       margin:10px 2px;
-      max-width:490px;
+      max-width:475px;
       border-radius:2px;
       }
     }
   }
-  @media only screen and (min-width: 1000px) {}
   @media only screen and (min-width: 1200px) {}
 
 </style>
@@ -292,16 +307,13 @@ export default {
     return{
        cities:['Columbia,SC','Greenville,SC','Charleston,SC'],
        jobs: [
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Degree Audit Coordinator', jobLocation: 'Columbia, SC', jobCompany: 'University of South Carolina', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Chair of BA Degree Program', jobLocation: 'Columbia, SC', jobCompany: 'Spartanburg Methodist', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Route Service Sales Representative', jobLocation: 'Columbia, SC', jobCompany: 'Malone', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Sitter Wanted', jobLocation: 'Lugoff, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Customer Service Rep(07283)-148 HWY 274, Unit #4', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
-        { jobTitle: 'Construction Worker', jobLocation: 'Columbia, SC', jobCompany: 'ATL Technologies', jobDescription: 'This is a great Jobs Description,  ' },
+        { jobTitle: 'Walmart. (Hiring Immediately)', jobLocation: 'Columbia, SC', jobCompany: 'Walmart.MyJobResource.com', jobDescription: '(Hiring Immediately)!!! Search Part/Full-Time Walmart Jobs In Your Area.' },
+        { jobTitle: 'Part-Time Shuttle Bus Driver', jobLocation: 'Columbia, SC', jobCompany: 'Green Way Shuttles', jobDescription: 'Green Way Shuttles is a professional student transportation company that currently services over 50 separate properties at 23 universities across the United States.We are currently hiring Shuttle Bus' },
+        { jobTitle: 'Part Time - Load Puller - Early Mornings', jobLocation: 'Columbia, SC', jobCompany: 'Lowes', jobDescription: 'Lowes - JobID: 1449105BR [Retail / Laborer] Support delivery activities including inspecting and preparing merchandise and loads for delivery, unloading, installing, and checking appliances and store ' },
+        { jobTitle: 'Part-Time Sales Associate. Work From Home!', jobLocation: 'Columbia, SC', jobCompany: 'Helin Insurance Group', jobDescription: 'Job DescriptionWhat we are looking for:Licensed life insurance agents - or those willing to get a license - to join our team! Meet with clients that have requested our services - No Cold Calling.No ex' },
+        { jobTitle: 'Retail Sales Part Time', jobLocation: 'Columbia, SC', jobCompany: 'FDJ.com', jobDescription: 'As an Apparel and Accessories team member, your eye for trend will help our guests discover new looks and bring their definition of style to life with confidence. Were looking for team members who' },
+        { jobTitle: 'Hiring: Walmart Cashiers ($18-26/Hr)', jobLocation: 'Columbia, SC', jobCompany: 'Rocketjobs.net/Walmart-Full-Time', jobDescription: 'Walmart is Hiring Cashiers Today. No Experience Needed. Same Day Interviews!' },
+        { jobTitle: 'Bookseller - Part-Time - Columbia - 29240', jobLocation: 'Columbia, SC', jobCompany: 'Barnes and Noble', jobDescription: '# Bookseller \\- Part\\-Time## **Location****SC \\- Columbia \\- Midtown at Forest Acres \\- 2868**## **Classification****Part\\-Time**## **Description****As a Bookseller, you sell all our products and' },
       ],
     }
   },
